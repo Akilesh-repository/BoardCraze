@@ -13,15 +13,15 @@
           extend: {
             fontWeight: {
               semibold: '500',
-              bold: '600',
-              extrabold: '800',
-              black: '900'
+              bold: '500',
+              extrabold: '500',
+              black: '500'
             }
           }
         }
       }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
@@ -47,8 +47,8 @@
             --bg-secondary: #F4F4F5;
 
             /* Card & Text */
-            --bg-card: #FFFFFF;
-            --card-border: #E4E4E7;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(255, 255, 255, 0.5);
             --text-main: #18181B;
             --text-muted: #71717A;
 
@@ -78,8 +78,8 @@
             --bg-color: #09090B; 
             --bg-secondary: #18181B; 
 
-            --bg-card: #18181B; 
-            --card-border: #27272A;
+            --bg-card: rgba(24, 24, 27, 0.85); 
+            --card-border: rgba(255, 255, 255, 0.1);
             --text-main: #FAFAFA; 
             --text-muted: #A1A1AA;
 
@@ -98,13 +98,18 @@
             --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
             --btn-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.2);
             --btn-shadow-hover: 0 8px 24px -4px rgba(245, 158, 11, 0.5);
+
+            box-shadow: inset 0 0 0 2000px rgba(9, 9, 11, 0.85);
         }
 
         body {
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 100% 0%, var(--bg-secondary) 0%, transparent 50%),
-                              radial-gradient(circle at 0% 100%, var(--bg-secondary) 0%, transparent 50%);
-            transition: background-color 0.5s ease;
+            background-image: url('images/pexels-karola-g-6333909.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 0 0 2000px rgba(250, 250, 250, 0.3);
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -123,7 +128,7 @@
         .top-bar {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             padding: 1rem 1.5rem;
             gap: 1.5rem;
@@ -131,14 +136,18 @@
             flex-shrink: 0;
         }
 
-        .home-btn-text {
-            font-size: 0.7rem; font-weight: 800; color: var(--page-text);
-            background: var(--bg-card); border: 2px solid var(--card-border);
-            padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: 0.3s;
-            text-transform: uppercase; letter-spacing: 1px;
-            text-decoration: none;
+        .top-controls-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            padding: 6px 12px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .home-btn-text:hover { border-color: var(--accent-color); color: var(--accent-color); }
 
         .toggle {
             width: 44px; height: 26px;
@@ -149,20 +158,18 @@
         }
         .toggle::before {
             content: ''; position: absolute; width: 20px; height: 20px;
-            background: white; border-radius: 50%; top: 2px; left: 3px;
+            background: var(--text-main); border-radius: 50%; top: 2px; left: 3px;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         body.dark-mode .toggle::before { left: 19px; background: var(--accent-color); box-shadow: none; }
 
         .top-btn-text {
-            font-size: 0.7rem; font-weight: 800; color: var(--page-text);
-            background: var(--bg-card); border: 2px solid var(--card-border);
-            padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: 0.3s;
+            font-size: 0.7rem; font-weight: 800; color: var(--text-main);
+            background: transparent; border: none;
+            padding: 4px 8px; border-radius: 8px; cursor: pointer; transition: 0.3s;
             text-transform: uppercase; letter-spacing: 1px;
         }
-        .top-btn-text:hover { border-color: var(--accent-color); color: var(--accent-color); }
-
-        .top-controls-right { display: flex; align-items: center; gap: 1.5rem; }
+        .top-btn-text:hover { color: var(--accent-color); }
 
         /* MAIN WRAPPER */
         .main-wrapper {
@@ -178,15 +185,17 @@
         /* REGISTER CARD */
         .login-card {
             background-color: var(--bg-card);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--card-border);
             border-radius: var(--radius);
-            padding: clamp(1.75rem, 4vh, 2.75rem) clamp(1.75rem, 3.5vw, 2.5rem);
+            padding: 1.25rem 1.5rem;
             width: 100%;
-            max-width: 460px;
+            max-width: 400px;
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 12px;
             position: relative;
             overflow: hidden;
             transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -199,26 +208,26 @@
         }
 
         /* HEADERS */
-        .auth-logo { display: flex; justify-content: center; margin-bottom: 4px; }
+        .auth-logo { display: flex; justify-content: center; margin-bottom: 2px; }
         .auth-header { text-align: center; }
-        .auth-header h2 { font-size: clamp(1.3rem, 2.8vh, 1.7rem); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.5px; }
-        .auth-header p { font-size: 0.85rem; color: var(--text-muted); margin: 0; font-weight: 400; }
+        .auth-header h2 { font-size: clamp(1.2rem, 2.5vh, 1.5rem); font-weight: 800; color: var(--text-main); margin-bottom: 2px; letter-spacing: -0.5px; }
+        .auth-header p { font-size: 0.8rem; color: var(--text-muted); margin: 0; font-weight: 400; }
 
         /* FORM */
-        form { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+        form { display: flex; flex-direction: column; gap: 8px; margin: 0; }
 
         /* FLOATING LABEL INPUT DESIGN */
         .input-wrapper { position: relative; width: 100%; }
 
         .input-field {
             width: 100%;
-            padding: 22px 16px 8px 16px;
+            padding: 16px 14px 4px 14px;
             background-color: var(--input-bg);
             color: var(--input-text);
             border: 1px solid transparent;
             border-bottom: 2px solid var(--input-border);
             border-radius: 8px 8px 0 0;
-            font-size: 0.92rem;
+            font-size: 0.8rem;
             font-weight: 500;
             transition: all 0.3s ease;
             margin: 0;
@@ -226,11 +235,11 @@
 
         .input-label {
             position: absolute;
-            left: 16px;
+            left: 14px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.8rem;
             transition: all 0.25s ease;
             pointer-events: none;
             opacity: 0.8;
@@ -238,8 +247,8 @@
 
         .input-field:focus ~ .input-label,
         .input-field:not(:placeholder-shown) ~ .input-label {
-            top: 12px;
-            font-size: 0.68rem;
+            top: 8px;
+            font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -263,18 +272,18 @@
         .password-toggle:hover, .password-toggle:focus { color: var(--accent-color); outline: none; }
 
         /* ROLE GRID */
-        .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 2px; }
+        .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 0; }
         .role-option {
             border: 1px solid var(--input-border);
             background: var(--input-bg);
             border-radius: 8px;
-            padding: 10px 8px;
+            padding: 6px 4px;
             text-align: center;
             cursor: pointer;
             transition: all 0.25s ease;
-            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
             color: var(--text-muted);
-            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+            font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
         }
         .role-option i { font-size: 1.1rem; }
         .role-option:hover { border-color: var(--accent-color); color: var(--accent-color); }
@@ -296,14 +305,14 @@
         /* Gradient Submit Button */
         .auth-btn {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
             color: var(--btn-text);
             border: none;
             border-radius: 8px;
-            font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
             cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            margin-top: 4px;
+            margin-top: 2px;
             display: flex; align-items: center; justify-content: center;
             box-shadow: var(--btn-shadow);
         }
@@ -315,15 +324,15 @@
         }
 
         /* DIVIDER */
-        .divider { display: flex; align-items: center; text-align: center; margin: 2px 0; }
+        .divider { display: flex; align-items: center; text-align: center; margin: 0; }
         .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--card-border); }
-        .divider span { padding: 0 16px; color: var(--text-muted); font-size: 0.72rem; font-weight: 600; }
+        .divider span { padding: 0 12px; color: var(--text-muted); font-size: 0.7rem; font-weight: 600; }
 
         /* AUTH PROVIDERS */
-        .auth-providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .auth-providers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .provider-btn {
             width: 100%;
-            height: 44px;
+            height: 40px;
             border: 1px solid var(--input-border); border-radius: 8px;
             background-color: var(--input-bg);
             font-size: 1.25rem; color: var(--text-main);
@@ -344,23 +353,16 @@
             transform: translateY(-2px);
             box-shadow: var(--btn-shadow-hover);
         }
-        /* SVG fallback for X icon (if fa-x-twitter doesn't render) */
-        .provider-btn .x-fallback { display: none; font-weight: 900; font-family: 'Inter', sans-serif; font-size: 1rem; letter-spacing: -1px; }
-        .provider-btn.no-x-icon .fa-x-twitter { display: none !important; }
-        .provider-btn.no-x-icon .x-fallback { display: inline-flex; }
+        /* 3rd icon fallback logic */
+        .provider-btn i, .provider-btn svg { transition: transform 0.3s; }
+        .provider-btn:hover i, .provider-btn:hover svg { transform: scale(1.1); }
 
         /* FOOTER LINKS */
         .login-link { text-align: center; font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-top: 4px; }
         .login-link a { color: var(--accent-color); font-weight: 700; text-decoration: none; transition: all 0.2s; border-bottom: 1px solid transparent; }
         .login-link a:hover { border-bottom-color: var(--accent-color); }
 
-        /* Plain text logo color in auth area */
-        body:not(.dark-mode) .auth-logo a {
-            color: #18181B !important;
-        }
-        body.dark-mode .auth-logo a {
-            color: var(--text-main) !important;
-        }
+
 
         /* =========================================
            FULL RESPONSIVE BREAKPOINTS
@@ -381,7 +383,6 @@
             .login-card { max-width: 100%; width: 100%; margin: 1rem auto; padding: 2rem 1.75rem; gap: 14px; border-radius: 14px; }
             .auth-header h2 { font-size: 1.6rem; }
             .auth-header p { font-size: 0.88rem; }
-            .auth-logo a { font-size: 1.65rem !important; }
             .role-grid { gap: 10px; }
             .role-option { padding: 12px 8px; }
         }
@@ -398,7 +399,6 @@
             .top-controls-right { gap: 0.75rem; }
             .main-wrapper { padding: 0.5rem; }
             .login-card { width: 94%; margin: 0.75rem auto; padding: 1.5rem 1.25rem !important; gap: 12px !important; border-radius: 12px; }
-            .auth-logo a { font-size: 1.5rem !important; letter-spacing: 0.15em !important; }
             .auth-header h2 { font-size: 1.35rem !important; margin-bottom: 4px !important; }
             .auth-header p { font-size: 0.82rem !important; line-height: 1.4; }
             form { gap: 12px !important; }
@@ -445,12 +445,11 @@
 <body>
 
     <div class="top-bar">
-        <a href="index.html" class="home-btn-text"><i class="fas fa-arrow-left mr-2"></i>Back To Home</a>
         <div class="top-controls-right">
             <div class="flex items-center gap-2" style="cursor: pointer;" onclick="document.getElementById('theme-toggle').click()">
-                <i class="fas fa-sun text-xs" style="color: var(--page-text); transition: color 0.3s;"></i>
+                <i class="fas fa-sun text-xs" style="color: var(--text-main); transition: color 0.3s;"></i>
                 <div class="toggle" id="theme-toggle"></div>
-                <i class="fas fa-moon text-xs" style="color: var(--page-text); transition: color 0.3s;"></i>
+                <i class="fas fa-moon text-xs" style="color: var(--text-main); transition: color 0.3s;"></i>
             </div>
             <button id="rtl-toggle" class="top-btn-text">LTR</button>
         </div>
@@ -460,8 +459,7 @@
         <div class="login-card">
 
             <div class="auth-logo">
-                <!-- EXACT SAME LOGO MATCHING NAVBAR -->
-                <a href="index.html" class="text-xl md:text-2xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)]" style="text-decoration: none;">
+                <a href="index.html" class="text-xl md:text-2xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)] pr-2" style="text-decoration: none;">
                     <i class="fa-solid fa-dice-d20 text-[var(--accent-color)] text-2xl md:text-3xl"></i>
                     BoardCraze
                 </a>
@@ -515,9 +513,13 @@
             <div class="divider"><span>Or sign up with</span></div>
 
             <div class="auth-providers">
-                <button class="provider-btn" type="button" title="Sign up with Google"><i class="fa-brands fa-google"></i></button>
-                <button class="provider-btn" type="button" title="Sign up with Discord"><i class="fa-brands fa-discord"></i></button>
-                <button class="provider-btn" type="button" title="Sign up with X" id="x-btn"><i class="fa-brands fa-x-twitter"></i><span class="x-fallback">𝕏</span></button>
+                <button class="provider-btn" type="button" title="Sign in with Google"><i class="fa-brands fa-google"></i></button>
+                <button class="provider-btn" type="button" title="Sign in with Discord"><i class="fa-brands fa-discord"></i></button>
+                <button class="provider-btn" type="button" title="Sign in with X">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width: 1.1em; height: 1.1em;">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </button>
             </div>
 
             <div class="login-link">
