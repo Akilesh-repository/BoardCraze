@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobby & Board Games Store - Home 2</title>
-    <link rel="icon" type="image/jpeg" href="images/download.png">
-    <link rel="icon" type="image/png" href="images/download.png">
+    <link rel="icon" type="image/jpeg" href="images\download (1).png">
+    <link rel="icon" type="image/png" href="images\download (1).png">
     <script src="tailwind.js"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontWeight: {
-              semibold: '500',
-              bold: '500',
-              extrabold: '500',
-              black: '500'
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontWeight: {
+                        semibold: '500',
+                        bold: '500',
+                        extrabold: '500',
+                        black: '500'
+                    }
+                }
             }
-          }
         }
-      }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
         /* === RESET & CORE === */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             transition: background-color 0.3s, color 0.3s;
@@ -40,54 +50,72 @@
         /* === THEME VARIABLES === */
         :root {
             --bg-color: #FAFAFA;
-            --bg-secondary: #F4F4F5; 
-            --bg-card: #FFFFFF; 
+            --bg-secondary: #F4F4F5;
+            --bg-card: #FFFFFF;
             --text-main: #18181B;
             --text-muted: #71717A;
-            --accent-color: #D97706; 
-            --accent-dark: #B45309;  
+            --accent-color: #D97706;
+            --accent-dark: #B45309;
             --border-color: #E4E4E7;
             --drawer-bg: rgba(255, 255, 255, 0.98);
-            --menu-hover-bg: rgba(217, 119, 6, 0.05); 
+            --menu-hover-bg: rgba(217, 119, 6, 0.05);
         }
 
         /* DARK MODE */
         body.dark-mode {
-            --bg-color: #09090B; 
-            --bg-secondary: #18181B; 
-            --bg-card: #18181B; 
-            --text-main: #FAFAFA; 
+            --bg-color: #09090B;
+            --bg-secondary: #18181B;
+            --bg-card: #18181B;
+            --text-main: #FAFAFA;
             --text-muted: #A1A1AA;
-            --accent-color: #F59E0B; 
-            --accent-dark: #D97706; 
+            --accent-color: #F59E0B;
+            --accent-dark: #D97706;
             --border-color: #27272A;
             --drawer-bg: rgba(9, 9, 11, 0.98);
-            --menu-hover-bg: rgba(245, 158, 11, 0.1); 
+            --menu-hover-bg: rgba(245, 158, 11, 0.1);
         }
 
         /* RTL SUPPORT */
-        [dir="rtl"] { text-align: right; }
-        [dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
-        [dir="rtl"] .mr-auto { margin-left: auto; margin-right: 0; }
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .ml-auto {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        [dir="rtl"] .mr-auto {
+            margin-left: auto;
+            margin-right: 0;
+        }
 
         @keyframes subtleZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
         }
-        .animate-zoom { animation: subtleZoom 20s infinite alternate ease-in-out; }
+
+        .animate-zoom {
+            animation: subtleZoom 20s infinite alternate ease-in-out;
+        }
 
         /* === MODERN GLASSMORPHISM NAVBAR === */
-        .navbar { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
-            padding: 0 24px; 
+            padding: 0 24px;
             height: 80px;
             display: flex;
             align-items: center;
@@ -102,29 +130,30 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             height: 70px;
         }
+
         body.dark-mode .navbar.scrolled {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
-        
+
         /* Upgraded Hover Nav Links */
-        .nav-link { 
+        .nav-link {
             position: relative;
             padding: 8px 10px;
             margin: 0;
-            color: var(--text-main); 
-            text-decoration: none; 
+            color: var(--text-main);
+            text-decoration: none;
             font-size: 11px;
-            font-weight: 700; 
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.3s ease; 
-            display: inline-flex; 
-            align-items: center; 
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
             gap: 4px;
-            cursor: pointer; 
+            cursor: pointer;
             border-radius: 6px;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -138,86 +167,343 @@
             border-radius: 2px;
         }
 
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover,
+        .nav-link.active {
             color: var(--accent-color);
             background: var(--menu-hover-bg);
         }
 
-        .nav-link:hover::after, .nav-link.active::after { 
-            width: 40%; 
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 40%;
         }
-        
+
         /* Dropdown Restyled for New Nav */
-        .dropdown { position: relative; display: flex; align-items: center; height: 100%; }
-        .dropdown-menu { position: absolute; top: 60px; left: 0; transform: translateY(10px); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 100; }
-        .navbar.scrolled .dropdown-menu { top: 55px; } 
-        
-        .dropdown-inner { 
-            background: var(--bg-card); border: 1px solid var(--border-color); 
-            border-radius: 8px; border-top: 3px solid var(--accent-color); min-width: 220px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); padding: 12px 8px; display: flex; flex-direction: column; gap: 4px; 
+        .dropdown {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .navbar.scrolled .dropdown-menu {
+            top: 55px;
+        }
+
+        .dropdown-inner {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-color);
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             margin-top: 10px;
         }
-        body.dark-mode .dropdown-inner { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-        
-        .dropdown-item { display: block; padding: 10px 16px; border-radius: 4px; color: var(--text-main); text-decoration: none; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; text-align: left; white-space: nowrap; }
-        .dropdown-item:hover { background: var(--menu-hover-bg); color: var(--accent-color); padding-left: 20px; }
-        [dir="rtl"] .dropdown-item:hover { padding-left: 16px; padding-right: 20px; }
+
+        body.dark-mode .dropdown-inner {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 4px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .dropdown-item:hover {
+            background: var(--menu-hover-bg);
+            color: var(--accent-color);
+            padding-left: 20px;
+        }
+
+        [dir="rtl"] .dropdown-item:hover {
+            padding-left: 16px;
+            padding-right: 20px;
+        }
 
         /* PILL TOGGLE */
-        .theme-toggle-pill { width: 48px; height: 26px; background: var(--bg-secondary); border-radius: 30px; position: relative; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 0 6px; border: 1px solid var(--border-color); }
-        body.dark-mode .theme-toggle-pill { border-color: var(--border-color); }
-        .theme-toggle-pill i { font-size: 10px; z-index: 1; }
-        .theme-toggle-pill .fa-sun { color: #f59e0b; }
-        .theme-toggle-pill .fa-moon { color: #999; }
-        .theme-toggle-pill .thumb { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1); box-shadow: 0 2px 4px rgba(0,0,0,0.2); z-index: 2; border: 1px solid var(--border-color);}
-        body.dark-mode .theme-toggle-pill .thumb { transform: translateX(22px); background: #333; border-color: var(--border-color); }
+        .theme-toggle-pill {
+            width: 48px;
+            height: 26px;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .theme-toggle-pill {
+            border-color: var(--border-color);
+        }
+
+        .theme-toggle-pill i {
+            font-size: 10px;
+            z-index: 1;
+        }
+
+        .theme-toggle-pill .fa-sun {
+            color: #f59e0b;
+        }
+
+        .theme-toggle-pill .fa-moon {
+            color: #999;
+        }
+
+        .theme-toggle-pill .thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            border: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .theme-toggle-pill .thumb {
+            transform: translateX(22px);
+            background: #333;
+            border-color: var(--border-color);
+        }
 
         /* RTL BUTTON STYLE */
         .rtl-btn-style {
-            width: 40px; height: 26px; background: var(--bg-secondary); border-radius: 30px; border: 1px solid var(--border-color);
-            display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; cursor: pointer;
-            color: var(--text-main); transition: all 0.3s ease;
+            width: 40px;
+            height: 26px;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            color: var(--text-main);
+            transition: all 0.3s ease;
         }
-        body.dark-mode .rtl-btn-style { border-color: var(--border-color); }
-        .rtl-btn-style:hover { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+
+        body.dark-mode .rtl-btn-style {
+            border-color: var(--border-color);
+        }
+
+        .rtl-btn-style:hover {
+            background: var(--accent-color);
+            color: #fff;
+            border-color: var(--accent-color);
+        }
 
         /* === BUTTON DESIGN === */
-        .btn { 
-            padding: 10px 24px; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; 
-            transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; 
-            position: relative; border: 1px solid transparent; border-radius: 4px; 
+        .btn {
+            padding: 10px 24px;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid transparent;
+            border-radius: 4px;
         }
-        .btn-solid { background: var(--accent-color); color: #FFFFFF !important; }
-        .btn-solid:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 15px -3px rgba(217, 119, 6, 0.3); }
-        .btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); }
-        .btn-outline:hover { border-color: var(--accent-color); color: var(--accent-color) !important; transform: translateY(-2px); }
+
+        .btn-solid {
+            background: var(--accent-color);
+            color: #FFFFFF !important;
+        }
+
+        .btn-solid:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(217, 119, 6, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color) !important;
+            transform: translateY(-2px);
+        }
 
         /* MOBILE OVERLAY BACKGROUND */
-        .drawer-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease; backdrop-filter: blur(4px); }
-        .drawer-overlay.active { opacity: 1; visibility: visible; }
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
 
         /* HAMBURGER MENU */
-        .fullscreen-menu { 
-            position: fixed; top: 0; right: 0; width: 100%; max-width: 400px; height: 100dvh; background: var(--drawer-bg); z-index: 1001; display: flex; flex-direction: column; 
-            opacity: 0; visibility: hidden; transform: translateX(100%); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); border-left: 1px solid var(--border-color);
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 100dvh;
+            background: var(--drawer-bg);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100%);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-left: 1px solid var(--border-color);
         }
-        [dir="rtl"] .fullscreen-menu { right: auto; left: 0; transform: translateX(-100%); border-left: none; border-right: 1px solid var(--border-color); }
-        .fullscreen-menu.active { opacity: 1; visibility: visible; transform: translateX(0); }
-        
-        .mobile-link { display: block; width: 100%; padding: 16px 32px; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); text-decoration: none; transition: all 0.3s; border-bottom: 1px solid var(--border-color); }
-        .mobile-link:hover { color: var(--accent-color); padding-left: 40px; background: var(--menu-hover-bg); }
-        [dir="rtl"] .mobile-link:hover { padding-left: 32px; padding-right: 40px; }
+
+        [dir="rtl"] .fullscreen-menu {
+            right: auto;
+            left: 0;
+            transform: translateX(-100%);
+            border-left: none;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .fullscreen-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .mobile-link {
+            display: block;
+            width: 100%;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-link:hover {
+            color: var(--accent-color);
+            padding-left: 40px;
+            background: var(--menu-hover-bg);
+        }
+
+        [dir="rtl"] .mobile-link:hover {
+            padding-left: 32px;
+            padding-right: 40px;
+        }
 
         /* FOOTER */
-        footer { background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding-top: 80px; }
-        body.dark-mode footer { border-color: var(--border-color); }
-        footer h4 { color: var(--text-main); font-weight: 600; font-size: 1.1rem; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; } 
-        footer a, footer li, footer span { color: var(--text-muted); text-decoration: none; transition: all 0.3s; font-size: 0.95rem; font-weight: 400; }
-        footer a:hover { color: var(--accent-color); }
-        .social-link-circle { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; transition: all 0.3s; color: var(--text-main); background: transparent; }
-        .social-link-circle:hover { background: var(--accent-color); border-color: var(--accent-color); color: #FFFFFF; transform: translateY(-3px); }
-        .footer-bottom { border-top: 1px solid var(--border-color); padding: 32px 0; margin-top: 60px; }
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding-top: 80px;
+        }
+
+        body.dark-mode footer {
+            border-color: var(--border-color);
+        }
+
+        footer h4 {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer a,
+        footer li,
+        footer span {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-link-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .social-link-circle:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            margin-top: 60px;
+        }
 
         /* ================= HERO BANNER 2 (Center Aligned) ================= */
         .hero2-center {
@@ -231,23 +517,27 @@
             padding: 80px 24px 0;
             overflow: hidden;
         }
+
         .hero2-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
+
         .hero2-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             animation: subtleZoom 20s infinite alternate ease-in-out;
         }
+
         .hero2-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.85) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 100%);
         }
+
         .hero2-content {
             position: relative;
             z-index: 10;
@@ -256,6 +546,7 @@
             flex-direction: column;
             align-items: center;
         }
+
         .hero2-badge {
             display: inline-flex;
             align-items: center;
@@ -270,6 +561,7 @@
             text-transform: uppercase;
             margin-bottom: 24px;
         }
+
         .hero2-title {
             font-size: clamp(2.5rem, 6vw, 5.5rem);
             font-weight: 900;
@@ -279,11 +571,13 @@
             color: #fff;
             margin-bottom: 24px;
         }
+
         .hero2-title em {
             font-style: italic;
             font-weight: 300;
             color: var(--accent-color);
         }
+
         .hero2-desc {
             color: rgba(255, 255, 255, 0.8);
             font-size: clamp(0.9rem, 1.5vw, 1.1rem);
@@ -292,6 +586,7 @@
             max-width: 600px;
             font-weight: 300;
         }
+
         .hero2-cta {
             display: flex;
             gap: 16px;
@@ -300,25 +595,29 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar" id="main-nav">
         <div class="w-full flex items-center justify-between max-w-[1440px] mx-auto">
             <div class="flex items-center">
-                <a href="index.html" class="text-xl md:text-2xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)] pr-2" style="text-decoration: none;">
+                <a href="index.html"
+                    class="text-xl md:text-2xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)] pr-2"
+                    style="text-decoration: none;">
                     <i class="fa-solid fa-dice-d20 text-[var(--accent-color)] text-2xl md:text-3xl"></i>
                     BoardCraze
                 </a>
             </div>
-            
+
             <div class="hidden xl:flex justify-center items-center flex-1 gap-1">
                 <div class="dropdown">
                     <div class="nav-link active">Home <i class="fas fa-chevron-down text-[8px] opacity-50"></i></div>
                     <div class="dropdown-menu">
                         <div class="dropdown-inner">
                             <a href="index.html" class="dropdown-item">Home Page 1</a>
-                            <a href="home-2.html" class="dropdown-item" style="color: var(--accent-color);">Home Page 2</a>
+                            <a href="home-2.html" class="dropdown-item" style="color: var(--accent-color);">Home Page
+                                2</a>
                         </div>
                     </div>
                 </div>
@@ -332,17 +631,20 @@
             </div>
 
             <div class="hidden xl:flex items-center gap-3">
-                <a href="login.html" class="text-[var(--text-main)] text-[10px] font-bold uppercase tracking-wider hover:text-[var(--accent-color)] transition-colors px-1">Login</a> 
+                <a href="login.html"
+                    class="text-[var(--text-main)] text-[10px] font-bold uppercase tracking-wider hover:text-[var(--accent-color)] transition-colors px-1">Login</a>
                 <a href="register.html" class="btn btn-solid !py-2 !px-4 !text-[10px]">Register</a>
                 <div class="w-px h-5 bg-[var(--border-color)] mx-1"></div>
                 <div id="theme-toggle-desktop" class="theme-toggle-pill" title="Toggle Dark Mode">
-                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div>
+                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+                    <div class="thumb"></div>
                 </div>
                 <button id="rtl-btn" class="rtl-btn-style" title="Toggle LTR/RTL">LTR</button>
             </div>
 
             <div class="xl:hidden flex items-center justify-end gap-4">
-                <button id="mobile-btn" class="text-2xl text-[var(--text-main)] transition-colors hover:text-[var(--accent-color)]">
+                <button id="mobile-btn"
+                    class="text-2xl text-[var(--text-main)] transition-colors hover:text-[var(--accent-color)]">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -354,15 +656,18 @@
 
     <div class="fullscreen-menu" id="fullscreen-menu">
         <div class="w-full px-8 py-6 flex justify-between items-center shrink-0 border-b border-[var(--border-color)]">
-            <a href="index.html" class="text-xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)]" style="text-decoration: none;">
+            <a href="index.html"
+                class="text-xl font-black tracking-widest uppercase flex items-center gap-2 text-[var(--text-main)]"
+                style="text-decoration: none;">
                 <i class="fa-solid fa-dice-d20 text-[var(--accent-color)]"></i>
                 BoardCraze
             </a>
-            <button id="close-menu" class="w-10 h-10 rounded-full flex items-center justify-center transition-all text-xl text-[var(--text-main)] hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-color)]">
+            <button id="close-menu"
+                class="w-10 h-10 rounded-full flex items-center justify-center transition-all text-xl text-[var(--text-main)] hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-color)]">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div class="flex flex-col w-full overflow-y-auto flex-1 py-4">
             <a href="index.html" class="mobile-link">Home Page 1</a>
             <a href="home-2.html" class="mobile-link" style="color: var(--accent-color);">Home Page 2</a>
@@ -375,11 +680,16 @@
             <a href="contact.html" class="mobile-link">Contact</a>
         </div>
 
-        <div class="w-full px-8 py-8 border-t border-[var(--border-color)] flex flex-col gap-6 shrink-0 bg-[var(--bg-secondary)]">
+        <div
+            class="w-full px-8 py-8 border-t border-[var(--border-color)] flex flex-col gap-6 shrink-0 bg-[var(--bg-secondary)]">
             <div class="flex justify-between items-center w-full">
                 <div class="flex items-center gap-3">
-                    <span class="text-[var(--text-muted)] font-medium text-[10px] uppercase tracking-widest">Theme</span>
-                    <div id="theme-toggle-mobile" class="theme-toggle-pill"><i class="fas fa-sun"></i><i class="fas fa-moon"></i><div class="thumb"></div></div>
+                    <span
+                        class="text-[var(--text-muted)] font-medium text-[10px] uppercase tracking-widest">Theme</span>
+                    <div id="theme-toggle-mobile" class="theme-toggle-pill"><i class="fas fa-sun"></i><i
+                            class="fas fa-moon"></i>
+                        <div class="thumb"></div>
+                    </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <span class="text-[var(--text-muted)] font-medium text-[10px] uppercase tracking-widest">Dir</span>
@@ -408,13 +718,15 @@
                 <em>Imagination.</em>
             </h1>
             <p class="hero2-desc">
-                Step into a world of epic quests, strategic battles, and endless fun. Join our community and discover your next favorite game.
+                Step into a world of epic quests, strategic battles, and endless fun. Join our community and discover
+                your next favorite game.
             </p>
             <div class="hero2-cta">
                 <a href="products.html" class="btn btn-solid !py-4 !px-8 text-sm">
                     Shop Now
                 </a>
-                <a href="pricing.html" class="btn btn-outline !border-white !text-white hover:!bg-white hover:!text-black !py-4 !px-8 text-sm">
+                <a href="pricing.html"
+                    class="btn btn-outline !border-white !text-white hover:!bg-white hover:!text-black !py-4 !px-8 text-sm">
                     View Events
                 </a>
             </div>
@@ -424,33 +736,47 @@
     <!-- ================= SECTION 1: FEATURED CATEGORIES ================= -->
     <section class="w-full py-20 bg-[var(--bg-color)] border-b border-[var(--border-color)]">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
-            <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-2 block">Explore By Interest</span>
-            <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight mb-12">Shop Categories</h2>
+            <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-2 block">Explore By
+                Interest</span>
+            <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight mb-12">Shop
+                Categories</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <a href="products.html" class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
-                    <img src="images/pexels-cottonbro-4691596.jpg" alt="Board Games" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                <a href="products.html"
+                    class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
+                    <img src="images/pexels-cottonbro-4691596.jpg" alt="Board Games"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                         <h3 class="text-white font-bold text-lg uppercase tracking-wide">Board Games</h3>
                         <p class="text-gray-300 text-xs mt-1">Strategy & Fun</p>
                     </div>
                 </a>
-                <a href="products.html" class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
-                    <img src="images/pexels-lebele-13061221.jpg" alt="TCGs" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                <a href="products.html"
+                    class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
+                    <img src="images/pexels-lebele-13061221.jpg" alt="TCGs"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                         <h3 class="text-white font-bold text-lg uppercase tracking-wide">Card Games</h3>
                         <p class="text-gray-300 text-xs mt-1">Collect & Play</p>
                     </div>
                 </a>
-                <a href="products.html" class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
-                    <img src="images/pexels-gabriel-schincariol-cavalcante-657661087-17768376.jpg" alt="Miniatures" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                <a href="products.html"
+                    class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
+                    <img src="images/pexels-gabriel-schincariol-cavalcante-657661087-17768376.jpg" alt="Miniatures"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                         <h3 class="text-white font-bold text-lg uppercase tracking-wide">Miniatures</h3>
                         <p class="text-gray-300 text-xs mt-1">Paint & Battle</p>
                     </div>
                 </a>
-                <a href="products.html" class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
-                    <img src="images/pexels-pavel-danilyuk-8111252.jpg" alt="RPGs" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                <a href="products.html"
+                    class="group block relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-color)] aspect-[4/3]">
+                    <img src="images/pexels-pavel-danilyuk-8111252.jpg" alt="RPGs"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
                         <h3 class="text-white font-bold text-lg uppercase tracking-wide">RPGs</h3>
                         <p class="text-gray-300 text-xs mt-1">Roll for Initiative</p>
                     </div>
@@ -465,26 +791,38 @@
     <!-- ================= SECTION 2: PROMO BANNER ================= -->
     <section class="w-full py-20 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-            <div class="relative rounded-2xl overflow-hidden bg-[#18181B] border border-[var(--border-color)] shadow-xl flex flex-col md:flex-row items-center">
+            <div
+                class="relative rounded-2xl overflow-hidden bg-[#18181B] border border-[var(--border-color)] shadow-xl flex flex-col md:flex-row items-center">
                 <div class="w-full md:w-1/2 p-10 lg:p-16 flex flex-col justify-center z-10 relative">
-                    <div class="absolute top-0 left-0 w-32 h-32 bg-[var(--accent-color)] blur-[100px] opacity-30 rounded-full"></div>
-                    <span class="inline-block bg-[var(--accent-color)] text-white text-[10px] font-bold px-3 py-1 rounded uppercase tracking-wider w-fit mb-6">Limited Time Offer</span>
+                    <div
+                        class="absolute top-0 left-0 w-32 h-32 bg-[var(--accent-color)] blur-[100px] opacity-30 rounded-full">
+                    </div>
+                    <span
+                        class="inline-block bg-[var(--accent-color)] text-white text-[10px] font-bold px-3 py-1 rounded uppercase tracking-wider w-fit mb-6">Limited
+                        Time Offer</span>
                     <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight leading-tight mb-4">
                         Summer Game <br><span class="text-[var(--accent-color)]">Sale Event</span>
                     </h2>
                     <p class="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
-                        Get up to 40% off select board games, TCG booster boxes, and RPG accessories. Stock up for your next game night before supplies run out!
+                        Get up to 40% off select board games, TCG booster boxes, and RPG accessories. Stock up for your
+                        next game night before supplies run out!
                     </p>
                     <div class="flex gap-4">
-                        <a href="products.html" class="btn bg-[var(--accent-color)] text-white hover:bg-[var(--accent-dark)] !py-3 !px-8 border-none">
+                        <a href="products.html"
+                            class="btn bg-[var(--accent-color)] text-white hover:bg-[var(--accent-dark)] !py-3 !px-8 border-none">
                             Shop The Sale
                         </a>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 h-[300px] md:h-full relative min-h-[400px]">
-                    <img src="images/pexels-pavel-danilyuk-8111328.jpg" alt="Game Sale" class="absolute inset-0 w-full h-full object-cover opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#18181B] via-[#18181B]/80 to-transparent md:block hidden"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#18181B] via-[#18181B]/80 to-transparent md:hidden block"></div>
+                    <img src="images/pexels-pavel-danilyuk-8111328.jpg" alt="Game Sale"
+                        class="absolute inset-0 w-full h-full object-cover opacity-80">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#18181B] via-[#18181B]/80 to-transparent md:block hidden">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#18181B] via-[#18181B]/80 to-transparent md:hidden block">
+                    </div>
                 </div>
             </div>
         </div>
@@ -495,59 +833,81 @@
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
             <div class="flex justify-between items-end mb-10 border-b border-[var(--border-color)] pb-4">
                 <div>
-                    <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest block mb-2">Curated Selection</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight">Staff Picks</h2>
+                    <span
+                        class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest block mb-2">Curated
+                        Selection</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight">Staff
+                        Picks</h2>
                 </div>
-                <a href="products.html" class="hidden md:inline-flex nav-link !text-[var(--accent-color)]">See All <i class="fas fa-arrow-right ml-2 text-[10px]"></i></a>
+                <a href="products.html" class="hidden md:inline-flex nav-link !text-[var(--accent-color)]">See All <i
+                        class="fas fa-arrow-right ml-2 text-[10px]"></i></a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Product 1 -->
-                <div class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
+                <div
+                    class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
                     <div class="aspect-square bg-[var(--bg-secondary)] rounded-lg overflow-hidden relative mb-4">
-                        <img src="images/pexels-karola-g-6333907.jpg" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
-                        <div class="absolute top-2 right-2 bg-[#18181B] text-white text-[9px] font-bold px-2 py-1 rounded uppercase">Hot</div>
+                        <img src="images/pexels-karola-g-6333907.jpg" alt="Product"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <div
+                            class="absolute top-2 right-2 bg-[#18181B] text-white text-[9px] font-bold px-2 py-1 rounded uppercase">
+                            Hot</div>
                     </div>
                     <h4 class="font-bold text-[var(--text-main)] text-sm uppercase mb-1">Twilight Imperium</h4>
                     <p class="text-[var(--text-muted)] text-xs mb-3 flex-grow">Epic Space Strategy</p>
                     <div class="flex justify-between items-center mt-auto pt-4 border-t border-[var(--border-color)]">
                         <span class="font-bold text-[var(--accent-color)]">$149.99</span>
-                        <button class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fas fa-plus text-xs"></i></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i
+                                class="fas fa-plus text-xs"></i></button>
                     </div>
                 </div>
                 <!-- Product 2 -->
-                <div class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
+                <div
+                    class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
                     <div class="aspect-square bg-[var(--bg-secondary)] rounded-lg overflow-hidden relative mb-4">
-                        <img src="images/pexels-ahmetkurt-27219382.jpg" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="images/pexels-ahmetkurt-27219382.jpg" alt="Product"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                     </div>
                     <h4 class="font-bold text-[var(--text-main)] text-sm uppercase mb-1">MTG Commander Deck</h4>
                     <p class="text-[var(--text-muted)] text-xs mb-3 flex-grow">Pre-constructed Magic</p>
                     <div class="flex justify-between items-center mt-auto pt-4 border-t border-[var(--border-color)]">
                         <span class="font-bold text-[var(--accent-color)]">$45.00</span>
-                        <button class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fas fa-plus text-xs"></i></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i
+                                class="fas fa-plus text-xs"></i></button>
                     </div>
                 </div>
                 <!-- Product 3 -->
-                <div class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
+                <div
+                    class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
                     <div class="aspect-square bg-[var(--bg-secondary)] rounded-lg overflow-hidden relative mb-4">
-                        <img src="images/pexels-mibernaa-31916795.jpg" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="images/pexels-mibernaa-31916795.jpg" alt="Product"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                     </div>
                     <h4 class="font-bold text-[var(--text-main)] text-sm uppercase mb-1">Catan Extension</h4>
                     <p class="text-[var(--text-muted)] text-xs mb-3 flex-grow">5-6 Player Expansion</p>
                     <div class="flex justify-between items-center mt-auto pt-4 border-t border-[var(--border-color)]">
                         <span class="font-bold text-[var(--accent-color)]">$29.99</span>
-                        <button class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fas fa-plus text-xs"></i></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i
+                                class="fas fa-plus text-xs"></i></button>
                     </div>
                 </div>
                 <!-- Product 4 -->
-                <div class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
+                <div
+                    class="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] p-4 flex flex-col group hover:shadow-lg transition-all">
                     <div class="aspect-square bg-[var(--bg-secondary)] rounded-lg overflow-hidden relative mb-4">
-                        <img src="images/pexels-suzyhazelwood-9090534.jpg" alt="Product" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                        <img src="images/pexels-suzyhazelwood-9090534.jpg" alt="Product"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform">
                     </div>
                     <h4 class="font-bold text-[var(--text-main)] text-sm uppercase mb-1">Premium Dice Set</h4>
                     <p class="text-[var(--text-muted)] text-xs mb-3 flex-grow">Metal Polyhedral</p>
                     <div class="flex justify-between items-center mt-auto pt-4 border-t border-[var(--border-color)]">
                         <span class="font-bold text-[var(--accent-color)]">$35.00</span>
-                        <button class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i class="fas fa-plus text-xs"></i></button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-[var(--bg-secondary)] text-[var(--text-main)] flex items-center justify-center hover:bg-[var(--accent-color)] hover:text-white transition-colors"><i
+                                class="fas fa-plus text-xs"></i></button>
                     </div>
                 </div>
             </div>
@@ -558,8 +918,10 @@
     <section class="w-full bg-[var(--bg-secondary)] border-b border-[var(--border-color)] overflow-hidden">
         <div class="flex flex-col lg:flex-row min-h-[600px]">
             <div class="w-full lg:w-1/2 relative min-h-[400px]">
-                <img src="images/pexels-shvets-production-8899970.jpg" alt="Players" class="absolute inset-0 w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/80 to-transparent flex items-end p-12">
+                <img src="images/pexels-shvets-production-8899970.jpg" alt="Players"
+                    class="absolute inset-0 w-full h-full object-cover">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/80 to-transparent flex items-end p-12">
                     <div class="text-white">
                         <div class="text-4xl font-black mb-2">500+</div>
                         <div class="text-xs uppercase tracking-widest font-bold opacity-80">Active Guild Members</div>
@@ -567,16 +929,24 @@
                 </div>
             </div>
             <div class="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 bg-[var(--bg-card)]">
-                <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-4 block">Player Spotlight</span>
+                <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-4 block">Player
+                    Spotlight</span>
                 <i class="fas fa-quote-left text-5xl text-[var(--text-muted)] opacity-20 mb-8"></i>
-                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--text-main)] leading-snug mb-10 italic">
-                    "Finding BoardCraze was like discovering a hidden treasure. The community is incredibly welcoming, the staff knows every rulebook by heart, and Friday nights here are the absolute highlight of my week."
+                <h3
+                    class="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--text-main)] leading-snug mb-10 italic">
+                    "Finding BoardCraze was like discovering a hidden treasure. The community is incredibly welcoming,
+                    the staff knows every rulebook by heart, and Friday nights here are the absolute highlight of my
+                    week."
                 </h3>
                 <div class="flex items-center gap-5 border-t border-[var(--border-color)] pt-8">
-                    <img src="images/pexels-cottonbro-4691596.jpg" alt="Avatar" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--accent-color)] shadow-md">
+                    <img src="images/pexels-cottonbro-4691596.jpg" alt="Avatar"
+                        class="w-16 h-16 rounded-full object-cover border-2 border-[var(--accent-color)] shadow-md">
                     <div>
-                        <h5 class="text-[var(--text-main)] font-black text-sm md:text-base uppercase tracking-wide">Alex Mercer</h5>
-                        <span class="text-[var(--text-muted)] text-xs uppercase tracking-widest font-semibold mt-1 block">D&D Dungeon Master</span>
+                        <h5 class="text-[var(--text-main)] font-black text-sm md:text-base uppercase tracking-wide">Alex
+                            Mercer</h5>
+                        <span
+                            class="text-[var(--text-muted)] text-xs uppercase tracking-widest font-semibold mt-1 block">D&D
+                            Dungeon Master</span>
                     </div>
                 </div>
             </div>
@@ -587,48 +957,81 @@
     <section class="w-full py-20 bg-[var(--bg-color)] border-b border-[var(--border-color)]">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
             <div class="flex flex-col items-center text-center mb-12">
-                <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-2">Guild News</span>
-                <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight mb-4">From The Tavern</h2>
-                <p class="text-[var(--text-muted)] text-sm max-w-xl">Read up on our latest game reviews, strategy guides, and event recaps.</p>
+                <span class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-widest mb-2">Guild
+                    News</span>
+                <h2 class="text-3xl md:text-4xl font-black text-[var(--text-main)] uppercase tracking-tight mb-4">From
+                    The Tavern</h2>
+                <p class="text-[var(--text-muted)] text-sm max-w-xl">Read up on our latest game reviews, strategy
+                    guides, and event recaps.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Post 1 -->
-                <article class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform">
+                <article
+                    class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="images/pexels-pavel-danilyuk-8111324.jpg" alt="Blog" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">Review</div>
+                        <img src="images/pexels-pavel-danilyuk-8111324.jpg" alt="Blog"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">
+                            Review</div>
                     </div>
                     <div class="p-6">
-                        <span class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Oct 12, 2026</span>
-                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">The Ultimate Guide to Starting D&D</h3>
-                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">Everything you need to know about getting your first campaign off the ground.</p>
-                        <a href="blog.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <span
+                            class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Oct
+                            12, 2026</span>
+                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">The Ultimate
+                            Guide to Starting D&D</h3>
+                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">Everything you need to know about
+                            getting your first campaign off the ground.</p>
+                        <a href="blog.html"
+                            class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read
+                            More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </article>
                 <!-- Post 2 -->
-                <article class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform">
+                <article
+                    class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="images/pexels-mibernaa-31916809.jpg" alt="Blog" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">News</div>
+                        <img src="images/pexels-mibernaa-31916809.jpg" alt="Blog"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">
+                            News</div>
                     </div>
                     <div class="p-6">
-                        <span class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Oct 05, 2026</span>
-                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">Upcoming Releases for Winter</h3>
-                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">A sneak peek at the hottest board games hitting our shelves this holiday season.</p>
-                        <a href="blog.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <span
+                            class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Oct
+                            05, 2026</span>
+                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">Upcoming
+                            Releases for Winter</h3>
+                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">A sneak peek at the hottest board
+                            games hitting our shelves this holiday season.</p>
+                        <a href="blog.html"
+                            class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read
+                            More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </article>
                 <!-- Post 3 -->
-                <article class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform md:hidden lg:block">
+                <article
+                    class="bg-[var(--bg-card)] rounded-xl overflow-hidden border border-[var(--border-color)] group hover:-translate-y-1 transition-transform md:hidden lg:block">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="images/pexels-annashoots-37983582.jpg" alt="Blog" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">Guide</div>
+                        <img src="images/pexels-annashoots-37983582.jpg" alt="Blog"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute top-4 left-4 bg-[var(--bg-card)] text-[var(--text-main)] text-[10px] font-bold px-3 py-1 rounded-full shadow">
+                            Guide</div>
                     </div>
                     <div class="p-6">
-                        <span class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Sep 28, 2026</span>
-                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">Painting Miniatures: Beginner Tips</h3>
-                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">Learn the basics of thinning your paints and applying washes like a pro.</p>
-                        <a href="blog.html" class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                        <span
+                            class="text-[var(--text-muted)] text-[10px] uppercase tracking-widest font-semibold block mb-2">Sep
+                            28, 2026</span>
+                        <h3 class="text-lg font-bold text-[var(--text-main)] mb-2 uppercase leading-snug">Painting
+                            Miniatures: Beginner Tips</h3>
+                        <p class="text-[var(--text-muted)] text-sm mb-4 line-clamp-2">Learn the basics of thinning your
+                            paints and applying washes like a pro.</p>
+                        <a href="blog.html"
+                            class="text-[var(--accent-color)] text-xs font-bold uppercase tracking-wide hover:underline inline-flex items-center">Read
+                            More <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </article>
             </div>
@@ -637,32 +1040,41 @@
 
     <!-- ================= SECTION 6: JOIN THE GUILD ================= -->
     <section class="w-full py-24 relative overflow-hidden bg-[#18181B]">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[150px] opacity-20 translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[var(--accent-dark)] rounded-full blur-[150px] opacity-20 -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
-        
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-[var(--accent-color)] rounded-full blur-[150px] opacity-20 translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-[var(--accent-dark)] rounded-full blur-[150px] opacity-20 -translate-x-1/2 translate-y-1/2 pointer-events-none">
+        </div>
+
         <div class="max-w-[1000px] mx-auto px-6 relative z-10 text-center">
-            <div class="w-20 h-20 bg-[var(--accent-color)] rounded-2xl mx-auto flex items-center justify-center rotate-45 mb-10 shadow-lg shadow-[var(--accent-dark)]/50">
+            <div
+                class="w-20 h-20 bg-[var(--accent-color)] rounded-2xl mx-auto flex items-center justify-center rotate-45 mb-10 shadow-lg shadow-[var(--accent-dark)]/50">
                 <i class="fab fa-discord text-4xl text-white -rotate-45"></i>
             </div>
-            
+
             <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 leading-tight">
                 Join The <span class="text-[var(--accent-color)]">Digital Tavern</span>
             </h2>
-            
+
             <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-                Connect with local players, find groups for your next RPG campaign, get notified about secret drops, and join our weekly tabletop discussions.
+                Connect with local players, find groups for your next RPG campaign, get notified about secret drops, and
+                join our weekly tabletop discussions.
             </p>
-            
+
             <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-8">
                 <div class="relative flex-grow">
                     <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                    <input type="email" placeholder="Enter your email address" class="w-full bg-white/10 border border-white/20 text-white pl-12 pr-4 py-4 rounded-lg focus:outline-none focus:border-[var(--accent-color)] focus:bg-white/15 transition-all text-sm font-medium placeholder-gray-500" required>
+                    <input type="email" placeholder="Enter your email address"
+                        class="w-full bg-white/10 border border-white/20 text-white pl-12 pr-4 py-4 rounded-lg focus:outline-none focus:border-[var(--accent-color)] focus:bg-white/15 transition-all text-sm font-medium placeholder-gray-500"
+                        required>
                 </div>
-                <button type="submit" class="btn bg-[var(--accent-color)] hover:bg-[var(--accent-dark)] text-white border-none !py-4 !px-8 rounded-lg shadow-xl shrink-0">
+                <button type="submit"
+                    class="btn bg-[var(--accent-color)] hover:bg-[var(--accent-dark)] text-white border-none !py-4 !px-8 rounded-lg shadow-xl shrink-0">
                     Get Invite Link
                 </button>
             </form>
-            
+
             <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider">
                 <i class="fas fa-shield-alt mr-1"></i> No spam. Just natural 20s.
             </p>
@@ -674,12 +1086,16 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-10 pt-4">
                 <div class="lg:col-span-4">
-                    <a href="index.html" class="text-2xl font-black tracking-widest uppercase flex items-center gap-2 mb-6 text-[var(--text-main)]" style="text-decoration: none;">
+                    <a href="index.html"
+                        class="text-2xl font-black tracking-widest uppercase flex items-center gap-2 mb-6 text-[var(--text-main)]"
+                        style="text-decoration: none;">
                         <i class="fa-solid fa-dice-d20 text-[var(--accent-color)]"></i>
                         BoardCraze
                     </a>
-                    <p class="opacity-80 leading-relaxed text-sm font-medium mb-8 max-w-sm" style="color: var(--text-muted);">
-                        Your local haven for tabletop gaming. Supplying everything from strategy board games and immersive RPGs to miniatures and painting supplies.
+                    <p class="opacity-80 leading-relaxed text-sm font-medium mb-8 max-w-sm"
+                        style="color: var(--text-muted);">
+                        Your local haven for tabletop gaming. Supplying everything from strategy board games and
+                        immersive RPGs to miniatures and painting supplies.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="social-link-circle"><i class="fab fa-instagram"></i></a>
@@ -687,7 +1103,7 @@
                         <a href="#" class="social-link-circle"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="lg:col-span-8">
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                         <div>
@@ -712,16 +1128,23 @@
                         <div class="sm:col-span-2 md:col-span-1">
                             <h4>The Dungeon</h4>
                             <ul class="space-y-4 text-[var(--text-muted)] text-sm font-medium">
-                                <li class="flex items-start gap-4"><i class="fas fa-map-marker-alt mt-1 shrink-0" style="color: var(--accent-color);"></i><span>42 Meeple Street<br>Gaming District, NY 10018</span></li>
-                                <li class="flex items-center gap-4"><i class="fas fa-phone shrink-0" style="color: var(--accent-color);"></i><a href="tel:+15550198" class="break-all hover:text-[var(--accent-color)]">+1 (555) 019-8000</a></li>
-                                <li class="flex items-center gap-4"><i class="fas fa-envelope shrink-0" style="color: var(--accent-color);"></i><a href="contact.html" class="break-all hover:text-[var(--accent-color)]">hello@boardcraze.com</a></li>
+                                <li class="flex items-start gap-4"><i class="fas fa-map-marker-alt mt-1 shrink-0"
+                                        style="color: var(--accent-color);"></i><span>42 Meeple Street<br>Gaming
+                                        District, NY 10018</span></li>
+                                <li class="flex items-center gap-4"><i class="fas fa-phone shrink-0"
+                                        style="color: var(--accent-color);"></i><a href="tel:+15550198"
+                                        class="break-all hover:text-[var(--accent-color)]">+1 (555) 019-8000</a></li>
+                                <li class="flex items-center gap-4"><i class="fas fa-envelope shrink-0"
+                                        style="color: var(--accent-color);"></i><a href="contact.html"
+                                        class="break-all hover:text-[var(--accent-color)]">hello@boardcraze.com</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center text-xs gap-6 font-semibold uppercase tracking-widest">
+            <div
+                class="footer-bottom flex flex-col md:flex-row justify-between items-center text-xs gap-6 font-semibold uppercase tracking-widest">
                 <p style="color: var(--text-muted);">&copy; 2026 BoardCraze Store. All rights reserved.</p>
                 <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
                     <a href="#">Terms of Service</a>
@@ -744,72 +1167,73 @@
             }
         });
 
-        const mobileBtn = document.getElementById('mobile-btn'); 
-        const fullscreenMenu = document.getElementById('fullscreen-menu'); 
-        const closeMenu = document.getElementById('close-menu'); 
+        const mobileBtn = document.getElementById('mobile-btn');
+        const fullscreenMenu = document.getElementById('fullscreen-menu');
+        const closeMenu = document.getElementById('close-menu');
         const drawerOverlay = document.getElementById('drawer-overlay');
-        
-        function toggleMenu() { 
-            fullscreenMenu.classList.toggle('active'); 
+
+        function toggleMenu() {
+            fullscreenMenu.classList.toggle('active');
             drawerOverlay.classList.toggle('active');
             document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
-        
-        mobileBtn.onclick = toggleMenu; 
-        closeMenu.onclick = toggleMenu; 
-        drawerOverlay.onclick = toggleMenu; 
-        
+
+        mobileBtn.onclick = toggleMenu;
+        closeMenu.onclick = toggleMenu;
+        drawerOverlay.onclick = toggleMenu;
+
         const themeDesktop = document.getElementById('theme-toggle-desktop');
-        const themeMobile = document.getElementById('theme-toggle-mobile'); 
+        const themeMobile = document.getElementById('theme-toggle-mobile');
         const theme = localStorage.getItem('theme') || 'light';
 
         function updateThemeUI(isDark) {
             if (isDark) {
-                document.body.classList.add('dark-mode'); 
-                if(themeMobile) themeMobile.classList.add('active');
+                document.body.classList.add('dark-mode');
+                if (themeMobile) themeMobile.classList.add('active');
             } else {
                 document.body.classList.remove('dark-mode');
-                if(themeMobile) themeMobile.classList.remove('active');
+                if (themeMobile) themeMobile.classList.remove('active');
             }
         }
-        
+
         updateThemeUI(theme === 'dark');
-        
-        function toggleTheme() { 
+
+        function toggleTheme() {
             const isDark = !document.body.classList.contains('dark-mode');
             updateThemeUI(isDark);
-            localStorage.setItem('theme', isDark ? 'dark' : 'light'); 
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
-        
-        themeDesktop.onclick = toggleTheme; 
-        if(themeMobile) themeMobile.onclick = toggleTheme;
-        
+
+        themeDesktop.onclick = toggleTheme;
+        if (themeMobile) themeMobile.onclick = toggleTheme;
+
         // RTL Logic
-        const rtlBtn = document.getElementById('rtl-btn'); 
-        const rtlMobile = document.getElementById('rtl-toggle-mobile'); 
+        const rtlBtn = document.getElementById('rtl-btn');
+        const rtlMobile = document.getElementById('rtl-toggle-mobile');
         const dir = localStorage.getItem('dir') || 'ltr';
-        
+
         function updateRTLUI(currentDir) {
             const isRTL = currentDir === 'rtl';
             if (rtlBtn) rtlBtn.innerText = isRTL ? 'RTL' : 'LTR';
             if (rtlMobile) rtlMobile.innerText = isRTL ? 'RTL' : 'LTR';
         }
 
-        if (dir === 'rtl') { 
-            document.documentElement.dir = 'rtl'; 
+        if (dir === 'rtl') {
+            document.documentElement.dir = 'rtl';
         }
         updateRTLUI(dir);
-        
-        function toggleRTL() { 
-            const isRTL = document.documentElement.dir === 'rtl'; 
+
+        function toggleRTL() {
+            const isRTL = document.documentElement.dir === 'rtl';
             const newDir = isRTL ? 'ltr' : 'rtl';
-            document.documentElement.dir = newDir; 
-            localStorage.setItem('dir', newDir); 
+            document.documentElement.dir = newDir;
+            localStorage.setItem('dir', newDir);
             updateRTLUI(newDir);
         }
-        
-        if (rtlBtn) rtlBtn.onclick = toggleRTL; 
+
+        if (rtlBtn) rtlBtn.onclick = toggleRTL;
         if (rtlMobile) rtlMobile.onclick = toggleRTL;
     </script>
 </body>
+
 </html>
