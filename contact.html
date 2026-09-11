@@ -894,7 +894,7 @@
                     class="bg-[var(--bg-card)] border border-[var(--border-color)] p-8 rounded-xl shadow-sm text-center hover:-translate-y-2 transition-transform duration-300">
                     <div
                         class="w-16 h-16 bg-[var(--bg-secondary)] rounded-full flex items-center justify-center mx-auto mb-6 border border-[var(--border-color)]">
-                        <i class="fas fa-phone-alt text-2xl text-[var(--accent-color)]"></i>
+                        <i class="fas fa-phone-alt fa-flip-horizontal text-2xl text-[var(--accent-color)]"></i>
                     </div>
                     <h3 class="font-bold text-[var(--text-main)] text-lg uppercase tracking-wider mb-2">Call The Tavern
                     </h3>
@@ -1087,27 +1087,39 @@
             </div>
 
             <div class="space-y-4">
-                <div class="bg-[var(--bg-card)] border border-[var(--border-color)] p-6 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-[var(--text-main)] text-base mb-2">Do you buy used board games or MTG
-                        collections?</h4>
-                    <p class="text-[var(--text-muted)] text-sm leading-relaxed">Yes! We buy complete, gently used board
+                <details class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl shadow-sm group">
+                    <summary class="font-bold text-[var(--text-main)] text-base p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex justify-between items-center outline-none">
+                        Do you buy used board games or MTG collections?
+                        <i class="fas fa-chevron-down text-[var(--accent-color)] transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0">
+                        <p class="text-[var(--text-muted)] text-sm leading-relaxed">Yes! We buy complete, gently used board
                         games for store credit. We also have a dedicated buyer for Magic: The Gathering and Pokémon TCG
                         collections available Tuesday through Saturday.</p>
-                </div>
-                <div class="bg-[var(--bg-card)] border border-[var(--border-color)] p-6 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-[var(--text-main)] text-base mb-2">Can I bring outside food to the Tavern?
-                    </h4>
-                    <p class="text-[var(--text-muted)] text-sm leading-relaxed">We kindly ask that you do not bring
+                    </div>
+                </details>
+                <details class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl shadow-sm group">
+                    <summary class="font-bold text-[var(--text-main)] text-base p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex justify-between items-center outline-none">
+                        Can I bring outside food to the Tavern?
+                        <i class="fas fa-chevron-down text-[var(--accent-color)] transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0">
+                        <p class="text-[var(--text-muted)] text-sm leading-relaxed">We kindly ask that you do not bring
                         outside food or drinks. We have a fully stocked cafe inside the store with snacks, meals, and
                         beverages to keep your party fueled.</p>
-                </div>
-                <div class="bg-[var(--bg-card)] border border-[var(--border-color)] p-6 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-[var(--text-main)] text-base mb-2">How do I reserve a private RPG room?
-                    </h4>
-                    <p class="text-[var(--text-muted)] text-sm leading-relaxed">You can call the store directly or use
+                    </div>
+                </details>
+                <details class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-xl shadow-sm group">
+                    <summary class="font-bold text-[var(--text-main)] text-base p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex justify-between items-center outline-none">
+                        How do I reserve a private RPG room?
+                        <i class="fas fa-chevron-down text-[var(--accent-color)] transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-6 pb-6 pt-0">
+                        <p class="text-[var(--text-muted)] text-sm leading-relaxed">You can call the store directly or use
                         the contact form above and select "Private Room Booking". Guild Members can book rooms instantly
                         through their user dashboard.</p>
-                </div>
+                    </div>
+                </details>
             </div>
             <div class="mt-8 text-center">
                 <a href="faq.html" class="font-bold text-[var(--accent-color)] text-sm hover:underline">View All FAQs
@@ -1166,7 +1178,7 @@
                                 <li class="flex items-start gap-4"><i class="fas fa-map-marker-alt mt-1 shrink-0"
                                         style="color: var(--accent-color);"></i><span>42 Meeple Street<br>Gaming
                                         District, NY 10018</span></li>
-                                <li class="flex items-center gap-4"><i class="fas fa-phone shrink-0"
+                                <li class="flex items-center gap-4"><i class="fas fa-phone fa-flip-horizontal shrink-0"
                                         style="color: var(--accent-color);"></i><a href="tel:+15550198"
                                         class="break-all hover:text-[var(--accent-color)]">+1 (555) 019-8000</a></li>
                                 <li class="flex items-center gap-4"><i class="fas fa-envelope shrink-0"
